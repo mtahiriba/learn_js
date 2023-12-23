@@ -26,7 +26,7 @@ function handleAddProduct() {
   document.getElementById("quantity").value = "";
 }
 
-// Add onclick event listener to add button
+// Add onclick event listener to add button  // Function name
 document.getElementById("addButton").addEventListener("click", handleAddProduct);
 
 // For Each Loop
@@ -42,4 +42,31 @@ products.forEach(function(product){
   </div>
 </div>`
 });
+
+// Tab CSS change
+function handleTabClick(tab_name){
+  
+  const laptop = document.getElementById("laptop");
+  const tablet = document.getElementById("tablet");
+  const mobile = document.getElementById("mobile");
+  
+  if(tab_name == "laptop"){  
+    mobile.classList = "";
+    laptop.classList = "fw-bold pb-1 border-2 border-bottom border-danger";
+    tablet.classList = "";
+  } else if(tab_name == "mobile"){
+    mobile.classList = "fw-bold pb-1 border-2 border-bottom border-danger";
+    laptop.classList = "";
+    tablet.classList = "";
+  } else if(tab_name == "tablet"){
+    mobile.classList = "";
+    laptop.classList = "";
+    tablet.classList = "fw-bold pb-1 border-2 border-bottom border-danger";
+  }
+}
+
+// Add onclick event listener to tab links  // function name
+document.getElementById("laptop").addEventListener("click", () => handleTabClick("laptop"));
+document.getElementById("mobile").addEventListener("click", () => handleTabClick("mobile"));
+document.getElementById("tablet").addEventListener("click", () => handleTabClick("tablet"));
 
